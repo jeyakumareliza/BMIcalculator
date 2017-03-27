@@ -1,0 +1,47 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">              
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl">
+    <div class="container-fluid">
+        <h1>Calculate your BMI </h1>
+        <form class="form-horizontal" ng-submit="calculateBMI()">
+            <div>Please enter your height and weight<div>
+            <div class="form-group text-center">
+                <label for="height">Height: </label>
+                <input ng-model="height" id="height" type="text"/>
+                <select ng-model="heightUnit" type="multiple" id="heightUnit">
+                    <option value="centimeters" selected="selected">cm</option>
+                    <option value="inches">in</option>
+                </select>
+            </div>
+            <div class="form-group text-center">
+                <label for="weight">Weight: </label>
+                <input ng-model="weight" id="weight" type="text"/>
+                <select ng-model="weightUnit" type="multiple" id="weightUnit"/>
+                    <option value="kg" selected="selected">kg</option>
+                    <option value="lb">lb</option>
+                </select>
+            </div>
+            <div class="text-center">
+            <button class="btn btn-primary">Calculate BMI</button></div>
+            </form>
+        <div class="col-md-6"> A healthy BMI is between 19 - 25</div>
+        <div id="BMI"> </div>
+        <br>
+        <div id="msg"> </div>
+        
+        
+</div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script type="text/javascript" src="js/calculateBMI.js">
+        </script>
+        <script type="text/javascript">
+        app.initialize();
+    </script>
+    </body>
+</html>
